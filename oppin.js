@@ -8,4 +8,5 @@ person.prototype.calcAge = function() {
     return currentYear - this.birthYear;
 };
 const john = new person("John", 2007);
+console.log(john);
 john.calcAge();
