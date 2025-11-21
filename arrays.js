@@ -30,3 +30,5 @@ const myarr = [1, 2, 3, 4, 5];
 // const nnewarr2 = myarr.splice(1,3);
 // console.log("c " ,myarr);
 // console.log(nnewarr2);
+
+
