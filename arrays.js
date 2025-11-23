@@ -1,34 +1,59 @@
-const myarr = [1, 2, 3, 4, 5];
-// console.log(myarr[4]);
-// arrays methods
-// myarr.push(8);
-// console.log(myarr);
-// myarr.pop();
-// myarr.unshift(8);
-// myarr.shift();
-
-// console.log(myarr.includes(8));
-// console.log(myarr.indexOf(3));
-// console.log(myarr);
-
-// const newarr = myarr.join();
-
-// console.log(myarr);
-// console.log(typeof newarr);
+let heroes = ["ironman","thor","hulk","batman","shaktiman"];
+// for loop
+// for(let i = 0; i<heroes.length; i++){
+//     console.log(heroes[i]);
+// }
 
 
-// slice and splice
+// for..of loop
+// for(let hero of heroes){
+//     console.log(hero);
+// }
 
 
-// console.log("A " ,myarr);
-// const newarr = myarr.slice(1,4);
-// console.log(newarr);
-// console.log("B " ,myarr);
+// let marks = [34, 67, 89, 23, 45];
+// let sum = 0 ;
+// for(let val of marks){
+//     sum+=val;
+// }
+// let avg = sum/marks.length;
+// console.log(avg);
 
 
 
-// const nnewarr2 = myarr.splice(1,3);
-// console.log("c " ,myarr);
-// console.log(nnewarr2);
+
+// practice qs:
+
+// let items = [250,645,345,789,123,456];
+
+// for(let i = 0; i<items.length; i++){
+//     let offer = items[i]/10;
+//     items[i] = items[i] - offer;
+// }
+// console.log("the price after discount is: " + items);
+
+
+// array methods
+
+
+
+let fooditems = ["pizza","burger","fries","pasta","nuggets"];
+
+// fooditems.push("mommos");  // add item at last
+// console.log(fooditems);
+// let deleteitems =  fooditems.pop(); // delete item from last & retuurns deleted item
+// console.log(fooditems);
+// console.log("deleted item is: " + deleteitems);
+// console.log(fooditems.toString()); // converts array to strin
+
+// fooditems.unshift("samosa"); // add item at start
+// fooditems.shift(); // delete item from start
+console.log(fooditems.slice(1,4)); // return a peace of array  
+console.log(fooditems.splice(1,2,"dosa","idli")); // delete or add items in array  (add,remove,replace)
+
+
+
+
+
 
 
