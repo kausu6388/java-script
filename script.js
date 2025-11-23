@@ -1,55 +1,33 @@
-// conditonal statements in JavaScript
+const quiz = [
+  {q:"What does `margin` do in CSS?", a:"Inside", b:"Outside", c:"Border", d:"Font", cKey:"b"},
+  {q:"Which property sets the line around an element?", a:"padding", b:"margin", c:"border", d:"outline", cKey:"c"},
+  {q:"Can `padding` have negative values?", a:"Yes", b:"No", c:"Sometimes", d:"Only in grid", cKey:"b"},
+  {q:"Order in box model (inside→outside)?", a:"Margin→Border→Padding→Content", b:"Content→Padding→Border→Margin", c:"Border→Content→Margin→Padding", d:"Padding→Content→Margin→Border", cKey:"b"}
+];
 
-// let age = 100;
-// if (age < 18) {
-//     console.log("You are a minor.");
-// } else if (age >= 18 && age < 65) {
-//     console.log("You are an adult.");
-// } else {
-//     console.log("You are a senior citizen.");
-// }
-// let mode  = "dark";
-// let color;
-// if(mode==="dark"){
-//     color = "black";
-// }
-// if(mode==="light"){
-//     color = "white";
-// }
-// console.log(color);
+const container = document.getElementById("quizContainer");
+quiz.forEach((q,i) => {
+  let block = document.createElement("div");
+  block.className = "question-block";
+  block.innerHTML = `
+    <h3>${i+1}. ${q.q}</h3>
+    ${["a","b","c","d"].map(k => `<div class="option" onclick="selectAnswer(this,'${q.cKey}','${k}')">${q[k]}</div>`).join("")}
+    <p class="correct-answer-text">Correct Answer: ${q[q.cKey]}</p>
+  `;
+  container.appendChild(block);
+});
 
-// if-else statement
-// let mode  = "light";
-// let color;
-// if(mode==="dark"){
-//     color = "black";
-// } else{
-//     color = "white";
-// }
-// console.log(color);
+function selectAnswer(opt, key, k) {
+  let block = opt.parentElement;
+  let opts = block.querySelectorAll(".option");
+  let ans = block.querySelector(".correct-answer-text");
 
+  if ([...opts].some(o => o.classList.contains("correct")||o.classList.contains("wrong"))) return;
 
-
-
-// let age  = 15;
-// if(age>=18){
-//     console.console.log();
-//     ("vote");
-// } else{
-//      console.log("nt");
-// }
-
-
-// odd even
-// let num = 15;
-// if(num%2===0){
-//     console.log("even");
-// } else{
-//     console.log("odd");
-// }
-
-// ternary operator
-// condition ? true case : false case
-// let age  = 16;
-// let result  =  age>18 ? "You can vote" : "You cannot vote";   simpler or compact if- ele
-// console.log(result);
+  if (k === key) opt.classList.add("correct");
+  else {
+    opt.classList.add("wrong");
+    opts.forEach(o => { if(o.innerText === ans.innerText.replace("Correct Answer: ","")) o.classList.add("correct"); });
+    ans.style.display = "block";
+  }
+}
