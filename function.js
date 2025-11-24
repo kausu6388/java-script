@@ -60,8 +60,17 @@
 // callback function : function that is passed as an argument to another function and is executed after some operation is completed
 
 
-let num = [1,2,3,4,5];
+// let num = [1,2,3,4,5];
 
-num.forEach((num)=>{
-    console.log(num*num);
+// num.forEach((num)=>{
+//     console.log(num*num);
+// });
+
+
+
+let factorial = arr.reduce((res , curr){
+    return res * curr;
 });
+
+
+console.log(factorial);
