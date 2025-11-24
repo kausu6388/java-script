@@ -26,12 +26,24 @@
 
 // practical example 2
 
-let divs = document.getquerySelectorAll(".box");
+// let divs = document.getquerySelectorAll(".box");
 
 
-let indx = 1;
+// let indx = 1;
 
-for(let div of divs){
-    div.innerText = `this is box number ${indx}`;
-    indx++;
-}
+// for(let div of divs){
+//     div.innerText = `this is box number ${indx}`;
+//     indx++;
+// }
+
+
+let newbtn = document.createElement("button");
+newbtn.innerText = "click me";
+
+newbtn.style.backgroundColor = "blue";
+newbtn.style.color = "white";
+newbtn.style.padding = "10px 20px";
+newbtn.style.borderRadius = "5px";
+newbtn.style.border = "none";
+newbtn.style.cursor = "pointer";
+document.querySelector("body").prepend(newbtn);
